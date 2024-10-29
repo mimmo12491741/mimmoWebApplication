@@ -3,10 +3,11 @@
 header {
 
     background: linear-gradient(90deg, #006600 45%, #e30101 55%);
-    border: 5px solid;
+
     border-image: linear-gradient(90deg, #006600 45%, #e30101 55%) 1;
-    border-radius: 8px;
+
     padding: 20px;
+
 }
 
 h1{
@@ -20,3 +21,41 @@ h1{
             -1px 1px 0 black,
             1px 1px 0 black;
 }
+
+body {
+    background-color: rgba(0, 102, 0, 0.7);
+}
+
+.burgerButton {
+    font-size: 25px;
+    margin-left: 15px;
+    background-color: #006600;
+    border-color: #006600;
+}
+.burgerButton:hover {
+    background-color: #005100;
+    border-color: #005100;
+}
+
+.offcanvas-body {
+    background-color: rgba(0, 81, 0, 0.82);
+}
+.offcanvas-header {
+    background-color: rgba(0, 81, 0, 0.82);
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: none;
+    color: #dcdcdc;
+
+}
+
+.list-group-item:hover {
+    background-color: rgba(0, 81, 0, 0.76);
+    color: #dcdcdc;
+
+}
+
+
+

@@ -10,6 +10,9 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/navigation.js" defer></script>
+
 </head>
 
 <body>
@@ -17,16 +20,24 @@
 <header>
     <h1> Cristiano Ronaldo</h1>
 </header>
+
 <p></p>
-<button class="btn btn-primary fa-solid fa-bars" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></button>
+
+<button class="btn btn-primary burgerButton fa-solid fa-bars" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></button>
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
     </div>
     <div class="offcanvas-body">
-        <p>Try scrolling the rest of the page to see this option in action.</p>
+        <div class="list-group">
+            <button type="button" class="list-group-item list-group-item" id="biografiaButton">Biografia</button>
+            <button type="button" class="list-group-item list-group-item">Carriera</button>
+            <button type="button" class="list-group-item list-group-item">Palmares</button>
+            <button type="button" class="list-group-item list-group-item fa-solid fa-phone" >Contattalo !</button>
+
+        </div>
     </div>
 </div>
 
