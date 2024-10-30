@@ -2,9 +2,8 @@
 
 header {
 
-    background: linear-gradient(90deg, #006600 45%, #e30101 55%);
+    background: linear-gradient(90deg, rgba(0, 102, 0, 0.83) 35%, rgba(227, 1, 1, 0.76) 65%);
 
-    border-image: linear-gradient(90deg, #006600 45%, #e30101 55%) 1;
 
     padding: 20px;
 
@@ -61,5 +60,11 @@ body {
 .pagination .page-link {
     color: #005100;
 }
+.curr1 {
+    background-color: rgba(116, 255, 116, 0.24);
+}
+
+
+
 
 
