@@ -64,10 +64,6 @@ body {
     background-color: rgba(158, 172, 3, 0.47);
 }
 
-.rmvBut {
-    background-color: #e30101;
-    color: white;
-}
 
 .addBut {
     background-color: #495100;
@@ -75,9 +71,21 @@ body {
     color: white;
 }
 
+
 .addBut:hover {
     background-color: rgba(73, 81, 0, 0.79);
     border-color: rgba(73, 81, 0, 0.79);
     color: white;
+}
 
+.addSbt {
+    background-color: #495100;
+    border-color: #495100;
+    color: white;
+}
+
+.addSbt:hover {
+    background-color: rgba(73, 81, 0, 0.79);
+    border-color: rgba(73, 81, 0, 0.79);
+    color: white;
 }
