@@ -1,22 +1,19 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("awardForm").addEventListener("submit", function(event) {
+document.getElementById("awardForm").addEventListener("submit", function(event) {
         event.preventDefault();
-
         const title = document.getElementById("awardName").value;
         const year = document.getElementById("year").value;
         const number = document.getElementById("number").value;
 
         const tableBody = document.getElementById("individualTable").getElementsByTagName('tbody')[0];
 
-        addNewRowV1(tableBody, title, year, number);
+        addRow(tableBody, title, year, number);
 
         document.getElementById("awardForm").reset();
 
-
     });
-});
 
-function addNewRowV1(tableBody, awardName, year, number) {
+
+function addRow(tableBody, awardName, year, number) {
     const newRowHTML = `
         <tr>
             <td>${awardName}</td>

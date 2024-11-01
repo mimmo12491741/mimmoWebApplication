@@ -1,0 +1,58 @@
+header {
+    background: linear-gradient(90deg, #1e5eff 35%, rgba(0, 142, 255, 0.78) 65%);
+    padding: 20px;
+}
+
+h1{
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black;
+}
+
+
+.curr3 {
+    background-color: rgba(30, 176, 255, 0.42);
+}
+
+.ft {
+    color: #1e5eff;
+}
+
+.burgerButton {
+    font-size: 25px;
+    margin-left: 15px;
+    margin-top: 15px;
+    background-color: #1e5eff;
+    border-color: #1e5eff;
+}
+.burgerButton:hover {
+    background-color: #044dff;
+    border-color: #044dff;
+}
+
+.offcanvas-body {
+    background-color: rgba(30, 94, 255, 0.8);
+}
+.offcanvas-header {
+    background-color: rgba(30, 94, 255, 0.8);
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: none;
+    color: #dcdcdc;
+    font-style: normal;
+
+}
+
+.list-group-item:hover {
+    background-color: #1e5eff;
+    color: #dcdcdc;
+
+}
