@@ -12,8 +12,8 @@ document.getElementById("awardForm").addEventListener("submit", function(event) 
 
     });
 
-
 function addRow(tableBody, awardName, year, number) {
+
     const newRowHTML = `
         <tr>
             <td>${awardName}</td>
