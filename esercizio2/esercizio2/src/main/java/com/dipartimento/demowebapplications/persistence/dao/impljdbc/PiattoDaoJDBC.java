@@ -81,8 +81,28 @@ ON CONFLICT (id) DO UPDATE SET txt = EXCLUDED.txt;
 
     @Override
     public void delete(Piatto piatto) {
+        String deleteJoinTableQuery = "DELETE FROM ristorante_piatto WHERE piatto_nome = ?";
+        String deletePiattoQuery = "DELETE FROM piatto WHERE nome = ?";
 
+        try (PreparedStatement deleteJoinTableStmt = connection.prepareStatement(deleteJoinTableQuery);
+             PreparedStatement deletePiattoStmt = connection.prepareStatement(deletePiattoQuery)) {
+
+
+            deleteJoinTableStmt.setString(1, piatto.getNome());
+            deleteJoinTableStmt.executeUpdate();
+
+
+            deletePiattoStmt.setString(1, piatto.getNome());
+            deletePiattoStmt.executeUpdate();
+
+            System.out.println("Piatto eliminato: " + piatto.getNome());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Errore durante l'eliminazione del piatto: " + piatto.getNome(), e);
+        }
     }
+
 
     @Override
     public List<Piatto> findAllByRistoranteName(String ristoranteNome) {
@@ -111,9 +131,10 @@ ON CONFLICT (id) DO UPDATE SET txt = EXCLUDED.txt;
 
     public static void main(String[] args) {
         PiattoDao piattoDao = DBManager.getInstance().getPiattoDao();
+        Piatto insalata = new Piatto("insalata","...");
         List<Piatto> piatti = piattoDao.findAll();
-        List<Piatto> prova = piattoDao.findAllByRistoranteName("CasaBrutta");
-        for (Piatto piatto : piatti) {
+        List<Piatto> prova = piattoDao.findAllByRistoranteName("vela");
+        for (Piatto piatto : prova) {
             System.out.println(piatto.getNome());
             System.out.println(piatto.getIngredienti());
 

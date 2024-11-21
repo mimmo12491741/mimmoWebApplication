@@ -133,8 +133,26 @@ public class RistoranteDaoJDBC implements RistoranteDao {
 
     @Override
     public void delete(Ristorante ristorante) {
+        String deleteJoinTableQuery = "DELETE FROM ristorante_piatto WHERE ristorante_nome = ?";
+        String deleteRistoranteQuery = "DELETE FROM ristorante WHERE nome = ?";
 
+        try (PreparedStatement deleteJoinTableStmt = connection.prepareStatement(deleteJoinTableQuery);
+             PreparedStatement deleteRistoranteStmt = connection.prepareStatement(deleteRistoranteQuery)) {
+
+            deleteJoinTableStmt.setString(1, ristorante.getNome());
+            deleteJoinTableStmt.executeUpdate();
+
+            deleteRistoranteStmt.setString(1, ristorante.getNome());
+            deleteRistoranteStmt.executeUpdate();
+
+            System.out.println("Ristorante eliminato: " + ristorante.getNome());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Errore durante l'eliminazione del ristorante: " + ristorante.getNome(), e);
+        }
     }
+
 
     @Override
     public List<Ristorante> findAllByPiattoName(String nomePiatto) {
@@ -172,10 +190,11 @@ public class RistoranteDaoJDBC implements RistoranteDao {
             System.out.println(ristorante.getUbicazione());
         }
 
-        List<Ristorante> ristorantes = ristoDao.findAllByPiattoName("Bistecca");
+        List<Ristorante> ristorantes = ristoDao.findAllByPiattoName("carne");
         for (Ristorante ristorante : ristorantes) {
             System.out.println(ristorante.getNome());
         }
+
 
     }
 }

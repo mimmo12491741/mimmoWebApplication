@@ -26,7 +26,7 @@ public class DBManager {
     public Connection getConnection(){
         if (con == null){
             try {
-                con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/prova", "postgres", "myDBPassword");
+                con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "mimmopost");
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
